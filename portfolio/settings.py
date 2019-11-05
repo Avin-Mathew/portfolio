@@ -121,8 +121,11 @@ USE_TZ = True
 PROJECT_DIR = os.path.abspath(os.path.join(BASE_DIR, os.path.pardir))
 
 # Static settings
-STATIC_URL = '/portfolio/'
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticfiles"),
+]
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
