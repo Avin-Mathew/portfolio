@@ -1,0 +1,25 @@
+.nav-bag-color {
+    background-color: #2471c6;
+}
+
+.default-slider{
+    background-color: #41a4f5;
+}
+
+.padd-top {
+    padding-top: 3rem !important;
+    color: white;
+}
+
+.padd-bottom{
+    padding-bottom: 3rem !important;
+}
+
+.btn-color{
+    background-color: #2471c6;
+    color: white;
+}
+
+.text-color{
+    color: white;
+}
