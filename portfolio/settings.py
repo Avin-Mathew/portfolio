@@ -43,7 +43,12 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    #Cacheing Middlewares
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
+
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -119,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 PROJECT_DIR = os.path.abspath(os.path.join(BASE_DIR, os.path.pardir))
+REPOSITORY_ROOT = os.path.dirname(BASE_DIR)
 
 # Static settings
 STATIC_URL = '/static/'
@@ -126,6 +132,10 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "staticfiles"),
 ]
+
+# Media settings
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'media')
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
